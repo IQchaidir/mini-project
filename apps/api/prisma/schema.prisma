@@ -10,12 +10,37 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Sample {
-  id        Int      @id @default(autoincrement())
-  name      String
-  code      String   @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+// Prisma schema for your tables
 
-  @@map("samples") // if you want to use snake_case format
+model Event {
+  id    Int    @id @default(autoincrement())
+  title String
+  image String
+}
+
+model testing {
+  id    Int    @id @default(autoincrement())
+  title String
+}
+
+enum Category {
+  music
+  seminar
+  Sports
+  Technology
+  Arts
+  Food
+  Health
+  Business
+  Science
+  Travel
+  Family
+  Hobbies
+  Charity
+  Community
+  Film
+  Fashion
+  Holiday
+  Lifestyle
+  Other
 }
